@@ -1,2 +1,2 @@
-class { 'apache':
-}
+class { 'apache': }
+
