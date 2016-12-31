@@ -29,4 +29,3 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
-class { 'apache': }
