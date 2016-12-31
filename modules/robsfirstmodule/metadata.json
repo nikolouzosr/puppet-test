@@ -1,0 +1,15 @@
+{
+  "name": "nikolouzosr-robsfirstmodule",
+  "version": "0.1.0",
+  "author": "nikolouzosr",
+  "summary": "test module",
+  "license": "No lic",
+  "source": "git",
+  "project_page": "nikolouzosr github",
+  "issues_url": "git",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+

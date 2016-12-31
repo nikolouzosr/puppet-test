@@ -28,6 +28,9 @@ File { backup => false }
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+
+include robsfirstmodule
+
 class { 'apache':}
 file { '/var/www/html/index.html':
   ensure  =>      present,
