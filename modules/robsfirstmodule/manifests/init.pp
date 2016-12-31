@@ -56,7 +56,7 @@ package { 'openssh':
 #  source	=>	'puppet:///modules/ssh/sshd_config',
 #} 
 
-service { 'sshd':
+service { 'sshd with an error':
   ensure 	=>	'running',
   enable	=>	'true',
 #  require	=>	File['/etc/ssh/sshd_config'],
