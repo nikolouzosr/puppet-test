@@ -61,9 +61,10 @@ service { 'sshd':
   enable	=>	'true',
 #  require	=>	File['/etc/ssh/sshd_config'],
 }
-service { 'httpd':
-  ensure        =>      'running',
-  enable        =>      'true',
-#  require      =>      File['/etc/ssh/sshd_config'],
+package { 'ntp':
+  ensure => present,
+}
+service { 'ntpd':
+  ensure	=>	'running'
 }
 }
