@@ -42,19 +42,33 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
+
+class robsfirstmodule::params {
+  $sshd_file = '/etc/ssh/sshd_config'
+}
+
 class robsfirstmodule {
+include robsfirstmodule::params
+}
 package { 'openssh':
   ensure => present, 
 } 
 
-#file { '/etc/ssh/sshd_config':
-#  ensure	=>	'present',
-#  owner		=>	'root',
-#  group		=>	'root',
-#  mode		=>	'0644',	
-#  require	=>	Package['openssh'],
-#  source	=>	'puppet:///modules/ssh/sshd_config',
-#} 
+
+file { $sshd_file:
+  ensure	=>	'present',
+  owner		=>	'root',
+  group		=>	'root',
+  mode		=>	'0644',	
+  require	=>	Package['openssh'],
+} 
+
+file { '/etc/robs_config.conf':
+ensure	=> file,
+owner	=> 'apache',
+group	=> 'apache',
+source  => 'puppet:///modules/robsfirstmodule/my_test_file.conf',
+}
 
 service { 'sshd':
   ensure 	=>	'running',
